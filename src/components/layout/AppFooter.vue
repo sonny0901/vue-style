@@ -5,15 +5,7 @@ import { footerLinks } from '@/mocks/menus'
 
 <template>
   <footer class="footer">
-    <div class="footer__links-wrap">
-      <ul class="footer__links inner">
-        <li v-for="link in footerLinks" :key="link.label">
-          <RouterLink :to="link.to" :class="{ 'is-strong': link.strong }">{{ link.label }}</RouterLink>
-        </li>
-      </ul>
-    </div>
-
-    <div class="footer__body inner">
+    <div class="footer__body">
       <div class="footer__info">
         <p class="footer__logo">ONSTYLE</p>
         <address class="footer__address">
@@ -39,38 +31,19 @@ import { footerLinks } from '@/mocks/menus'
   margin-top: 8rem;
   border-top: 1px solid $color-gray-200;
   background: $color-gray-100;
-  font-size: $font-size-sm;
+  font-size: 1.3rem;
   color: $color-gray-500;
-
-  &__links-wrap {
-    border-bottom: 1px solid $color-gray-200;
-  }
-
-  &__links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem 2.4rem;
-    padding-top: 1.6rem;
-    padding-bottom: 1.6rem;
-    color: $color-gray-700;
-
-    .is-strong {
-      font-weight: 700;
-      color: $color-gray-900;
-    }
-  }
 
   &__body {
     display: flex;
     flex-direction: column-reverse;
     gap: 2.4rem;
-    padding-top: 3.2rem;
-    padding-bottom: 4.8rem;
+    padding: 1.5rem 1.8rem 3rem;
   }
 
   &__logo {
     margin-bottom: 1.2rem;
-    font-size: $font-size-lg;
+    font-size: 1.8rem;
     font-weight: 900;
     color: $color-gray-700;
   }
@@ -96,7 +69,7 @@ import { footerLinks } from '@/mocks/menus'
 
   &__cs-tel {
     margin: 0.4rem 0;
-    font-size: $font-size-xl;
+    font-size: 2.2rem;
     font-weight: 800;
     color: $color-gray-900;
   }

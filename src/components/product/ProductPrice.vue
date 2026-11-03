@@ -2,10 +2,14 @@
 import { computed } from 'vue'
 import { formatPrice, discountRate } from '@/utils/format'
 
-const { price, salePrice, size = 'md' } = defineProps({
-  price: { type: Number, required: true }, // 정가
-  salePrice: Number, // 판매가
-  size: String, // md | lg
+const {
+  price,
+  salePrice,
+  size = 'md',
+} = defineProps({
+  price: { type: Number, required: true },
+  salePrice: Number,
+  size: String,
 })
 
 const finalPrice = computed(() => salePrice ?? price)
@@ -13,26 +17,27 @@ const rate = computed(() => discountRate(price, finalPrice.value))
 </script>
 
 <template>
-  <div class="price" :class="`price--${size}`">
+  <span class="price" :class="`price--${size}`">
     <del v-if="rate" class="price__origin">
       <span class="blind">정가</span>{{ formatPrice(price) }}원
     </del>
-    <p class="price__final">
-      <em v-if="rate" class="price__rate">
-        <span class="blind">할인율</span>{{ rate }}%
-      </em>
+    <span class="price__final">
+      <em v-if="rate" class="price__rate"> <span class="blind">할인율</span>{{ rate }}% </em>
       <strong class="price__sale">
-        <span class="blind">판매가</span>{{ formatPrice(finalPrice) }}<span class="price__unit">원</span>
+        <span class="blind">판매가</span>{{ formatPrice(finalPrice)
+        }}<span class="price__unit">원</span>
       </strong>
-    </p>
-  </div>
+    </span>
+  </span>
 </template>
 
 <style scoped lang="scss">
 .price {
+  display: block;
+
   &__origin {
     display: block;
-    font-size: $font-size-sm;
+    font-size: 1.3rem;
     color: $color-gray-400;
   }
 
@@ -58,12 +63,12 @@ const rate = computed(() => discountRate(price, finalPrice.value))
 
   &--md &__rate,
   &--md &__sale {
-    font-size: $font-size-lg;
+    font-size: 1.8rem;
   }
 
   &--lg &__rate,
   &--lg &__sale {
-    font-size: $font-size-xxl;
+    font-size: 2.8rem;
   }
 }
 </style>

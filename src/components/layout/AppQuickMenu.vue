@@ -25,7 +25,7 @@ const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
   position: fixed;
   right: 1.6rem;
   bottom: 1.6rem;
-  z-index: $z-quick;
+  z-index: 90;
 
   &__btn {
     @include flex-center;
@@ -40,7 +40,7 @@ const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity $transition-base;
+  transition: opacity 0.2s ease;
 }
 .fade-enter-from,
 .fade-leave-to {

@@ -1,28 +1,16 @@
 <script setup>
-import ProductCard from './ProductCard.vue'
 import ProductItem from './ProductItem.vue'
 
-const {
-  products,
-  cols = 2,
-  showRank = false,
-} = defineProps({
+const { products, cols = 2 } = defineProps({
   products: { type: Array, required: true },
-  cols: Number, // 한 줄 개수
-  showRank: Boolean,
+  cols: Number,
 })
 </script>
 
 <template>
   <ul class="product-list" :style="{ '--cols': cols }">
-    <!-- <li v-for="(product, index) in products" :key="product.id"> -->
-    <!-- 카드 커스텀이 필요하면 slot으로 교체 -->
-    <!-- <slot :product="product" :index="index">
-        <ProductCard :product="product" :rank="showRank ? index + 1 : undefined" />
-      </slot> -->
-    <!-- </li> -->
-    <li>
-      <ProductItem />
+    <li v-for="product in products" :key="product.id">
+      <ProductItem :product="product" />
     </li>
   </ul>
 </template>

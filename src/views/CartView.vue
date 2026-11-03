@@ -13,7 +13,6 @@ const cart = useCartStore()
   <div class="cart inner">
     <SectionTitle title="장바구니" class="cart__title" />
 
-    <!-- TODO: CartItem, CartSummary 컴포넌트로 분리 (components/cart/) -->
     <ul v-if="cart.items.length" class="cart__list">
       <li v-for="item in cart.items" :key="item.id" class="cart__item">
         <img :src="item.image" :alt="item.name" class="cart__thumb" />
@@ -27,7 +26,7 @@ const cart = useCartStore()
     </ul>
 
     <EmptyState v-else message="장바구니에 담긴 상품이 없습니다.">
-      <BaseButton to="/products" variant="outline">쇼핑하러 가기</BaseButton>
+      <BaseButton to="/" variant="outline">쇼핑하러 가기</BaseButton>
     </EmptyState>
   </div>
 </template>
@@ -52,7 +51,7 @@ const cart = useCartStore()
   &__thumb {
     width: 8rem;
     height: 8rem;
-    border-radius: $radius-sm;
+    border-radius: 0.4rem;
     object-fit: cover;
   }
 

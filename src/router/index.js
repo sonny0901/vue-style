@@ -1,5 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { gnbMenus } from '@/mocks/menus'
 import HomeView from '@/views/HomeView.vue'
+
+const TabView = () => import('@/views/TabView.vue')
+
+// 홈을 제외한 GNB 탭은 menus.js 목록으로 라우트 생성 (화면 전환 확인용)
+const tabRoutes = gnbMenus
+  .filter((menu) => menu.to !== '/')
+  .map((menu) => ({
+    path: menu.to,
+    name: menu.to.slice(1),
+    component: TabView,
+    props: { title: menu.label },
+  }))
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,32 +23,11 @@ const router = createRouter({
       component: HomeView,
       meta: { headerFixed: true },
     },
-    {
-      path: '/products',
-      name: 'product-list',
-      component: () => import('@/views/ProductListView.vue'),
-    },
-    {
-      path: '/product/:id',
-      name: 'product-detail',
-      component: () => import('@/views/ProductDetailView.vue'),
-      props: true,
-    },
+    ...tabRoutes,
     {
       path: '/cart',
       name: 'cart',
       component: () => import('@/views/CartView.vue'),
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component: () => import('@/views/LoginView.vue'),
-      meta: { layout: 'empty' },
-    },
-    {
-      path: '/:pathMatch(.*)*',
-      name: 'not-found',
-      component: () => import('@/views/NotFoundView.vue'),
     },
   ],
   scrollBehavior: () => ({ top: 0 }),

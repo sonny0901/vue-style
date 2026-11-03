@@ -42,7 +42,7 @@ const tag = computed(() => (to ? RouterLink : href ? 'a' : 'button'))
   justify-content: center;
   gap: 0.6rem;
   border: 1px solid transparent;
-  border-radius: $radius-sm;
+  border-radius: 0.4rem;
   font-weight: 600;
   white-space: nowrap;
 
@@ -55,17 +55,17 @@ const tag = computed(() => (to ? RouterLink : href ? 'a' : 'button'))
   &--sm {
     height: 3.2rem;
     padding: 0 1.2rem;
-    font-size: $font-size-sm;
+    font-size: 1.3rem;
   }
   &--md {
     height: 4.4rem;
     padding: 0 2rem;
-    font-size: $font-size-md;
+    font-size: 1.4rem;
   }
   &--lg {
     height: 5.6rem;
     padding: 0 2.8rem;
-    font-size: $font-size-lg;
+    font-size: 1.8rem;
   }
 
   // variant

@@ -46,14 +46,14 @@ $logo-white: 'https://image.cjonstyle.net/public/confirm/static/deploy/webjars/e
 // 기본: 일반 헤더 (홈 외 탭, 홈 스크롤 후)
 .header {
   position: relative;
-  z-index: $z-header;
+  z-index: 100;
   background: $color-white;
   box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.06);
 
   &__wrap {
     display: flex;
     align-items: center;
-    height: $header-height;
+    height: 5rem;
   }
 
   &__logo {

@@ -19,7 +19,7 @@ const { message = '내용이 없습니다.' } = defineProps({
   text-align: center;
 
   &__message {
-    font-size: $font-size-base;
+    font-size: 1.5rem;
     color: $color-gray-500;
   }
 

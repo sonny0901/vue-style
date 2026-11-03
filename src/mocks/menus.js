@@ -1,12 +1,16 @@
 // GNB 메뉴
 export const gnbMenus = [
   { label: '홈', to: '/' },
-  { label: 'TV쇼핑', to: '/products?tab=tv' },
-  { label: '라이브쇼', to: '/products?tab=live' },
-  { label: '랭킹', to: '/products?tab=ranking' },
-  { label: '특가', to: '/products?tab=deal' },
-  { label: '브랜드', to: '/products?tab=brand' },
-  { label: '이벤트', to: '/products?tab=event' },
+  { label: 'TV쇼핑', to: '/tv' },
+  { label: '라이브쇼', to: '/live' },
+  { label: '랭킹', to: '/ranking' },
+  { label: '특가', to: '/deal' },
+  { label: '브랜드', to: '/brand' },
+  { label: '이벤트', to: '/event' },
+  { label: '뷰티', to: '/beauty' },
+  { label: '패션', to: '/fashion' },
+  { label: '식품', to: '/food' },
+  { label: '리빙', to: '/living' },
 ]
 
 // 전체 카테고리

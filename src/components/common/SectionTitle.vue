@@ -37,14 +37,14 @@ const { title, desc, moreTo, tag = 'h2' } = defineProps({
   margin-bottom: 2rem;
 
   &__title {
-    font-size: $font-size-lg;
+    font-size: 1.8rem;
     font-weight: 800;
     letter-spacing: -0.02em;
   }
 
   &__desc {
     margin-top: 0.4rem;
-    font-size: $font-size-md;
+    font-size: 1.4rem;
     color: $color-gray-500;
   }
 
@@ -52,7 +52,7 @@ const { title, desc, moreTo, tag = 'h2' } = defineProps({
     display: flex;
     align-items: center;
     flex-shrink: 0;
-    font-size: $font-size-sm;
+    font-size: 1.3rem;
     color: $color-gray-500;
   }
 }

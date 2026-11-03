@@ -1,12 +1,11 @@
 <script setup>
-import { RouterLink } from 'vue-router'
 import BaseBadge from '@/components/base/BaseBadge.vue'
 import BaseIcon from '@/components/base/BaseIcon.vue'
 import ProductPrice from './ProductPrice.vue'
 
 const { product, rank } = defineProps({
   product: { type: Object, required: true },
-  rank: Number, // 랭킹 영역에서 순위 표시
+  rank: Number,
 })
 
 const liked = defineModel('liked', { type: Boolean, default: false })
@@ -15,9 +14,7 @@ const liked = defineModel('liked', { type: Boolean, default: false })
 <template>
   <article class="product-card">
     <div class="product-card__thumb">
-      <RouterLink :to="`/product/${product.id}`" tabindex="-1" aria-hidden="true">
-        <img :src="product.image" :alt="product.name" loading="lazy" />
-      </RouterLink>
+      <img :src="product.image" :alt="product.name" loading="lazy" />
       <span v-if="rank" class="product-card__rank">{{ rank }}</span>
       <BaseBadge v-if="product.isLive" variant="live" class="product-card__live">LIVE</BaseBadge>
       <button
@@ -33,10 +30,8 @@ const liked = defineModel('liked', { type: Boolean, default: false })
     </div>
 
     <div class="product-card__info">
-      <RouterLink :to="`/product/${product.id}`">
-        <p class="product-card__brand">{{ product.brand }}</p>
-        <h3 class="product-card__name">{{ product.name }}</h3>
-      </RouterLink>
+      <p class="product-card__brand">{{ product.brand }}</p>
+      <h3 class="product-card__name">{{ product.name }}</h3>
 
       <ProductPrice :price="product.price" :sale-price="product.salePrice" />
 
@@ -61,7 +56,7 @@ const liked = defineModel('liked', { type: Boolean, default: false })
     position: relative;
     overflow: hidden;
     aspect-ratio: 1;
-    border-radius: $radius-md;
+    border-radius: 0.8rem;
     background: $color-gray-100;
 
     img {
@@ -112,13 +107,13 @@ const liked = defineModel('liked', { type: Boolean, default: false })
   }
 
   &__brand {
-    font-size: $font-size-sm;
+    font-size: 1.3rem;
     font-weight: 700;
   }
 
   &__name {
     @include ellipsis(2);
-    font-size: $font-size-md;
+    font-size: 1.4rem;
     color: $color-gray-700;
   }
 
@@ -126,7 +121,7 @@ const liked = defineModel('liked', { type: Boolean, default: false })
     display: flex;
     align-items: center;
     gap: 0.2rem;
-    font-size: $font-size-xs;
+    font-size: 1.2rem;
     color: $color-gray-700;
 
     .icon {

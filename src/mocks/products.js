@@ -5,7 +5,7 @@ export const products = [
   {
     id: 1,
     brand: '브랜드A',
-    name: '[TV방송] 프리미엄 캐시미어 블렌드 니트 3종 세트',
+    name: '[TV방송] 프리미엄 캐시미어 블렌드 니트 3종 세트 프리미엄 캐시미어 블렌드 니트 3종 세트 프리미엄 캐시미어 블렌드 니트 3종 세트',
     image: img(1),
     price: 129000,
     salePrice: 89000,
@@ -95,7 +95,19 @@ export const products = [
 ]
 
 export const banners = [
-  { id: 1, title: '가을 시즌 오프\n최대 70% 할인', image: 'https://picsum.photos/seed/onstyle-banner1/1280/400' },
-  { id: 2, title: '라이브쇼 단독\n타임특가', image: 'https://picsum.photos/seed/onstyle-banner2/1280/400' },
-  { id: 3, title: '신규회원\n첫 구매 쿠폰팩', image: 'https://picsum.photos/seed/onstyle-banner3/1280/400' },
+  {
+    id: 1,
+    title: '가을 시즌 오프\n최대 70% 할인',
+    image: 'https://picsum.photos/seed/onstyle-banner1/1280/400',
+  },
+  {
+    id: 2,
+    title: '라이브쇼 단독\n타임특가',
+    image: 'https://picsum.photos/seed/onstyle-banner2/1280/400',
+  },
+  {
+    id: 3,
+    title: '신규회원\n첫 구매 쿠폰팩',
+    image: 'https://picsum.photos/seed/onstyle-banner3/1280/400',
+  },
 ]

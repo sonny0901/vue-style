@@ -43,7 +43,7 @@ const onChange = (e) => {
   display: inline-flex;
   height: 3.6rem;
   border: 1px solid $color-gray-300;
-  border-radius: $radius-sm;
+  border-radius: 0.4rem;
 
   button {
     @include flex-center;
